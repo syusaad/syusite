@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+from tkinter.tix import Tree
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,6 +26,15 @@ SECRET_KEY = 'django-insecure-2@#cj*3lfx13-bq&%a)0wuis31uayy217j_*l1sbic-8*@-=7&
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+"""EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = "syusaad.gmail.com"
+EMAIL_HOST_PASSWORD = 'HoudaSyu372022'
+EMAIL_PORT = '587'
+
+ADMIN_EMAIL = "syusaad@gmail.com"""
 
 ALLOWED_HOSTS = []
 
