@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block index %}
+        <div class="animate__animated animate__zoomIn">
+            <a href="{% url 'admin:index' %}" target="_blank"><img src="{% static 'img/ppg-bubbles-action.png' %}" class="ppg-bubbles" /></a>
+            <h3>
+                Powerpuff Girls<br>
+                (Bubbles)
+            </h3>
+        </div>
+{% endblock index %}
+
+{% block portfolio %}
+        <article class="maPortfolio">
+        {% for x in data %}
+            <div class="animate__animated animate__fadeInRight">
+                <p><strong>Project &#8594;</strong> {{ x.project }}</p>
+                <p><strong>Client &#8594;</strong> {{ x.client }}</p>
+                <p><strong>Duration &#8594;</strong> {{ x.startDate }} to {{ x.endDate }}</p>
+                <p><strong>Description &#8594;</strong> {{ x.description }}</p>
+            </div>
+            {% endfor %}
+        </article>  
+{% endblock portfolio %}
+
+{% block contact %}
+        <form method="post" novalidate autocomplete="off" class="animate__animated animate__fadeInRight">
+        {% csrf_token %}
+        {% if created %}
+            <h1>Thanks for your message!</h1>
+        {% else %}
+            {% if notcreated %}
+                <h1>Please fill in the blank!</h1>
+            {% else %}
+                <h1>Leave me a message!</h1>
+            {% endif %}
+        
+            <table>
+                {{ form }}
+            </table>
+            <input type="submit" name="submit" value="Send" class="maButton">
+        {% endif %}
+        </form>
+{% endblock contact %}
