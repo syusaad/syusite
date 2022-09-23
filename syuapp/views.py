@@ -1,10 +1,10 @@
 from django.shortcuts import render
-#from django.conf import settings
-#from django.core.mail import send_mail
+from django.conf import settings
+from django.core.mail import send_mail
 from syuapp.forms import FeedbackForm
 from syuapp.models import Portfolio
 
-msgIndex = "Hey guys! It's me, Syu!";
+msgIndex = "Hey guys! Check me out!";
 msgPortfolio = "My most recent project:";
 msgContactUs = "Halo Halo!";
 
@@ -24,12 +24,12 @@ def contact(request):
         form = FeedbackForm(request.POST)
         if form.is_valid():
             pass  # does nothing, just triggers the validation
-            """feedback = form.cleaned_data['feedback']
+            feedback = form.cleaned_data['feedback']
             send_mail('Feedback Form',
             feedback,
             settings.EMAIL_HOST_USER,
-            settings.ADMIN_EMAIL,
-            fail_silently = False)"""
+            [settings.ADMIN_EMAIL],
+            fail_silently = False)
             form.save()
             form = FeedbackForm()
             context.update({'form':form.as_table, 'created':True}) # update basic context

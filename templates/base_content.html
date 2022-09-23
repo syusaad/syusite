@@ -2,12 +2,19 @@
 {% load static %}
 
 {% block index %}
-        <div class="animate__animated animate__zoomIn">
-            <a href="{% url 'admin:index' %}" target="_blank"><img src="{% static 'img/ppg-bubbles-action.png' %}" class="ppg-bubbles" /></a>
-            <h3>
-                SYUHADAH MUHAMED SA'AD<br>
-                Programmer in Eftech Drilling Solutions Sdn Bhd
-            </h3>
+        <div class="container animate__animated animate__zoomIn">
+            <div class="card-img">
+                <a href="{% url 'admin:index' %}" target="_blank"><img src="{% static 'img/Syu.jpeg' %}"></a>
+            </div>
+            <div class="card-content">
+                <h3>syuhadah muhamed sa'ad</h3>
+                <p>Programmer in Eftech Drilling Solutions Sdn Bhd</p>
+                <div class="social-media">
+                    <a href="https://www.linkedin.com/in/syuhadahmuhamedsaad/"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://github.com/syusaad"><i class="bx bxl-github"></i></a>
+                </div>
+            </div>
+            <a href="{% url 'contact' %}" class="{% if request.resolver_match.view_name == 'contact' %}navActive{% endif %}"><button>Send a Message<i class="bx bxl-send"></i></button></a>
         </div>
 {% endblock index %}
 
@@ -15,10 +22,10 @@
         <article class="maPortfolio">
         {% for x in data %}
             <div class="animate__animated animate__fadeInRight">
-                <p><strong>Project &#8594;</strong> {{ x.project }}</p>
-                <p><strong>Client &#8594;</strong> {{ x.client }}</p>
-                <p><strong>Duration &#8594;</strong> {{ x.startDate }} to {{ x.endDate }}</p>
-                <p><strong>Description &#8594;</strong> {{ x.description }}</p>
+                <p><strong>Project &#9655;</strong> {{ x.project }}</p>
+                <p><strong>Client &#9655;</strong> {{ x.client }}</p>
+                <p><strong>Duration &#9655;</strong> {{ x.startDate }} to {{ x.endDate }}</p>
+                <p><strong>Description &#9655;</strong> {{ x.description }}</p>
             </div>
             {% endfor %}
         </article>  

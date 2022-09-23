@@ -1,12 +1,28 @@
-html, body { padding:0; margin: 0; background-color: #0047AB; color: #fff; min-height: max-content; counter-reset: my-sec-counter; overflow-x: hidden; }
+html, body { align-items: center; justify-content: center; padding:0; margin: 0; background-color: #0047AB; color: #fff; min-height: max-content; counter-reset: my-sec-counter; overflow-x: hidden; }
 section { position: relative; width:90vw; text-align: center; left: 50%; transform: translateX(-50%); text-shadow: 0 10px 10px rgba(0, 0, 0, 0.4); margin-top: 80px; }
 a { text-decoration: none; font-family: 'Dosis', sans-serif;}
 h1 { font-family: 'Lobster', sans-serif; font-weight: 400; font-size: 80px; line-height: 65px; padding:0; margin: 0; pointer-events: none; }
-h3 { font-family: 'Dosis', sans-serif; font-weight: normal; font-size: 20px; line-height: 65px; padding:0; margin: 0; pointer-events: none;}
+h3 { font-family: 'Dosis', sans-serif; font-weight: normal; font-size: 20px; line-height: 40px; padding:0; margin: 0; pointer-events: none;}
 p { font-family: 'Dosis', sans-serif; font-size: 30px; }
-img { border: 0 none; width: 30%; }
+
+.container { max-width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+img { width: 100%; height: 100%; object-fit: cover;}
+.card-img { width: 150px; height: 150px; border-radius: 50%; overflow: hidden; }
+
+.card-content { margin: 0.8rem 0; text-align: center; }
+.card-content h3 { font-size: 2rem; color: var(--white); letter-spacing: 1.5px; text-transform: capitalize; }
+.card-content p { font-size: 1.5rem; color: var(--main); margin-top: 10px; }
+
+.social-media { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin: 0; }
+.social-media i { font-size: 35px; padding: 10px; cursor: pointer; color: #fff; }
+.social-media i:hover{ color: #00FFFF;}
+
+button { width:150px; padding:2px 5px; display:inline; margin:10px  auto; background-color: #FAFA33; color: #0047AB; cursor:pointer; border:0 none; border-radius: 5px; font: 20px 'Dosis', sans-serif; font-weight: bold;}
+button:hover { background-color:#666; color: #FAFA33; }
 
 .maAdminLink { font-family: 'Dosis', sans-serif; font-size: 20px; color: #fff; position: fixed; top:0; left: calc(100% - 20px); transform: translateX(-100%); }
+.maAdminLink:hover { color: #00FFFF;}
 
 ul.navMA { list-style-type: none; text-align: center; padding-inline-start: 0px; }
 ul.navMA li { list-style-type: none; display: inline-block; }
@@ -14,13 +30,11 @@ ul.navMA li a, ul.navMA li a:visited { font-size: 20px; margin: 0 10px; color: #
 ul.navMA li a:hover { color: #00FFFF;}
 ul.navMA li a.navActive { color: #00FFFF; text-decoration: underline; }
 
-.ppg-bubbles { display:block; max-height: 300px; margin:0 auto; }
-
 article.maPortfolio { width: 70%; margin: 0 auto; text-align: left; }
 article.maPortfolio div { border-bottom: 1px dotted #00FFFF; padding: 20px 0; }
 article.maPortfolio div:last-child { border-bottom: 0 none; }
 article.maPortfolio div:before { counter-increment: my-sec-counter; content: counter(my-sec-counter) ". "; font-family: 'Lobster', sans-serif; font-size: 30px; position: absolute; top:0; left:-70px; }
-article.maPortfolio p { display: block; font-family: 'Dosis', sans-serif; font-size: 20px; line-height: 20px; padding: 5px 0; margin: 0; display: block; font-weight: bold; }
+article.maPortfolio p { display: block; font-family: 'Dosis', sans-serif; font-size: 20px; line-height: 30px; padding: 5px 0; margin: 0; display: block; font-weight: bold; }
 article.maPortfolio strong { font-family: 'Lobster', sans-serif;font-size: 22px; font-weight: normal; }
 
 form { width: 100%; max-width: 70vw; margin: 0 auto;}
@@ -35,7 +49,7 @@ form table td input:autofill, form table td input:-webkit-autofill { font-family
 form table td ::-webkit-input-placeholder { /* Edge */ color: #CCC; }
 form table td :-ms-input-placeholder { /* Internet Explorer 10-11 */ color: #CCC; }
 form table td ::placeholder { color: #CCC; }
-form input.maButton { width:200px; padding:2px 5px; display:inline; margin:10px auto; background-color: #FAFA33; color: #000; cursor:pointer; border:0 none; border-radius: 5px; font: 20px 'Dosis', sans-serif; font-weight: bold;}
+form input.maButton { width:200px; padding:2px 5px; display:inline; margin:10px auto; background-color: #FAFA33; color: #0047AB; cursor:pointer; border:0 none; border-radius: 5px; font: 20px 'Dosis', sans-serif; font-weight: bold;}
 form input.maButton:hover { background-color:#666; color: #FAFA33; }
 form ul { list-style-type: none; padding-inline-start: 0px; text-align: right; color: red; padding:0; margin:0; font-weight: bold; }
 form ul li::before { display: inline; content: "*"; }
